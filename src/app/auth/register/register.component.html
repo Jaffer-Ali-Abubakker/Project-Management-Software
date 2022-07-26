@@ -1,0 +1,54 @@
+ <body>
+    
+
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form [formGroup]="RegisterForm" (ngSubmit)="onRegister()">
+        <h3>Register Form</h3>
+        <mat-form-field class="input-field"  appearance="outline">
+            <mat-label>Full Name</mat-label>
+            <input matInput placeholder="Placeholder"
+            type="text"
+            formControlName="FullName">
+            <mat-error *ngIf="RegisterForm.controls['FullName'].dirty && RegisterForm.hasError('required', 'FullName')">User Name is required</mat-error>
+        </mat-form-field>
+        <mat-form-field class="input-field"  appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Placeholder"
+            type="email"
+            formControlName="email">
+            <mat-error *ngIf="RegisterForm.controls['email'].dirty && RegisterForm.hasError('required', 'email')">Email is required</mat-error>
+            <mat-error *ngIf="RegisterForm.controls['email'].dirty && RegisterForm.hasError('required', 'email')">please entered valid mail</mat-error>
+          </mat-form-field>
+          <mat-form-field class="input-field" appearance="outline">
+            <mat-label>Mobile</mat-label>
+            <input matInput placeholder="Placeholder"
+            type="tel"
+            formControlName="mobile">
+            <mat-error *ngIf="RegisterForm.controls['mobile'].dirty && RegisterForm.hasError('required', 'mobile')">Mobile Number is required</mat-error>
+        </mat-form-field>
+          <mat-form-field class="input-field" appearance="outline">
+            <mat-label>password</mat-label>
+            <input matInput placeholder="Placeholder"
+            type="password"
+            formControlName="password">
+            <mat-error  *ngIf="RegisterForm.controls['password'].dirty && RegisterForm.hasError('required', 'password')" >password is required</mat-error>
+          </mat-form-field>
+          <mat-form-field class="input-field" appearance="outline">
+            <mat-label>Confirm password</mat-label>
+            <input matInput placeholder="Placeholder"
+            type="password"
+            formControlName="confirmPassword">
+            <mat-error  *ngIf="RegisterForm.controls['confirmPassword'].dirty && RegisterForm.hasError('required', 'confirmPassword')" >password is required</mat-error>
+          </mat-form-field>
+          <mat-error style="font-size: small;" *ngIf="RegisterForm.errors?.['passwordsDontMatch']">
+            Password should match
+          </mat-error>
+    
+        <button mat-raised-button color="warn" type="submit">Register</button>
+        
+    </form>
+    </body>
+    

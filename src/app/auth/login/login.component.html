@@ -1,0 +1,38 @@
+<body>
+    
+
+<div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+</div>
+<form [formGroup]="loginForm" (ngSubmit)="UserSubmit()" *ngIf="!isLoading">
+    <h3>Login Here</h3>
+    <mat-form-field  appearance="outline">
+        <mat-label>Enter the Email</mat-label>
+        <input matInput placeholder="Placeholder"
+        type="email"
+        formControlName="email">
+        <mat-error *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required', 'email')">Email is required</mat-error>
+        <mat-error *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required', 'email')">please entered valid mail</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="input-field" appearance="outline">
+        <mat-label>password</mat-label>
+        <input matInput placeholder="Placeholder"
+        type="password"
+        formControlName="password">
+        <mat-error  *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required', 'password')" >password is required</mat-error>
+      </mat-form-field>
+
+    <button mat-raised-button color="warn" type="submit" [disabled]="!loginForm.valid">LogIn</button>
+    
+    <div class="social">
+      <div class="go"><i class="fab fa-google"></i>  Google</div>
+      <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+    </div>
+    <div class="signup-link">
+    <a style="color: skyblue;" routerLink="register">Click to SignUp</a>
+  </div>
+</form>
+
+</body>
