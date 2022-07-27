@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from "@angular/forms";
 import { AuthService } from '../auth.service';
+import { faGoogle, faFacebook  } from '@fortawesome/free-brands-svg-icons';
 
 
 @Component({
@@ -9,6 +10,9 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  faGoogle =faGoogle;
+  faFacebook = faFacebook;
+
 public loginForm! : FormGroup
 isLoading = false;
 

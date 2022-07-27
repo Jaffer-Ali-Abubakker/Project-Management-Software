@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,6 +34,8 @@ import { LandingPageComponent } from './View-Page/landing-page/landing-page.comp
     MatIconModule,
     ReactiveFormsModule,
     FormsModule,
+    MdbCheckboxModule,
+    FontAwesomeModule
     
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],

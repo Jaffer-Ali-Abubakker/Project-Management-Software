@@ -24,15 +24,15 @@
         <mat-error  *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required', 'password')" >password is required</mat-error>
       </mat-form-field>
 
-    <button mat-raised-button color="warn" type="submit" [disabled]="!loginForm.valid">LogIn</button>
+    <button mat-raised-button color="warn" type="submit" >LogIn</button>
     
     <div class="social">
-      <div class="go"><i class="fab fa-google"></i>  Google</div>
-      <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+      <div class="go"><fa-icon [icon]="faGoogle"></fa-icon> Google</div>
+      <div class="fb"><fa-icon [icon]="faFacebook"></fa-icon> Facebook</div>
     </div>
     <div class="signup-link">
-    <a style="color: skyblue;" routerLink="register">Click to SignUp</a>
+    <a class="signup-register" style="color: skyblue;" routerLink="register">Click to SignUp</a>
   </div>
 </form>
 
-</body>
+</body> 

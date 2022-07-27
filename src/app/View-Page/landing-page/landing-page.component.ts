@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-landing-page',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./landing-page.component.scss']
 })
 export class LandingPageComponent implements OnInit {
+  faArrowCircleRight = faArrowCircleRight;
 
   constructor() { }
 
