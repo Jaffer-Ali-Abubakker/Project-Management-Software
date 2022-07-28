@@ -13,7 +13,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { MatIconModule } from '@angular/material/icon';
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { AuthInterceptor } from './auth/auth-interceptor';
-import { LandingPageComponent } from './View-Page/landing-page/landing-page.component';
+import { LandingPageComponent } from './auth/landing-page/landing-page.component';
 
 
 

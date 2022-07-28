@@ -2,15 +2,19 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { LandingPageComponent } from './View-Page/landing-page/landing-page.component';
+import { LandingPageComponent } from './auth/landing-page/landing-page.component';
 
 
 
 
 const routes: Routes = [
-  {path: "", component: LoginComponent},
+  {path: "", component: LandingPageComponent},
+  {path: "login", component: LoginComponent},
   {path: "register", component: RegisterComponent},
-  {path: "landing-page", component: LandingPageComponent}
+  {path: "",redirectTo: "/", pathMatch:'full' },
+  {path:"project-manager", loadChildren: () => import('./modules/project-manager/project-manager.module').then((m)=> m.ProjectManagerModule),
+ },
+  
 
 ];
 
