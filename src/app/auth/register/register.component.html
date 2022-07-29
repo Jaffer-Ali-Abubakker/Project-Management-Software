@@ -43,10 +43,7 @@
             formControlName="confirmPassword">
             <mat-error *ngIf="RegisterForm.controls['confirmPassword'].dirty && RegisterForm.hasError('required', 'confirmPassword')" >password is required</mat-error>
           </mat-form-field>
-
-            <div *ngIf="f.confirmPassword.errors.Validation">Password and Confirm Password must be match.</div>
-
-    
+            <!-- <div *ngIf="f.confirmPassword.errors.Validation">Password and Confirm Password must be match.</div> -->
         <button mat-raised-button color="warn" type="submit">Register</button>
         
     </form>

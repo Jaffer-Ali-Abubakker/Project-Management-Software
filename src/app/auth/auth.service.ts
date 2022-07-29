@@ -30,6 +30,11 @@ export class AuthService {
   createUser(FullName: string,email: string, mobile: number, password: string ){
     const authData: AuthData = {FullName: FullName, email: email, mobile: mobile, password: password}
      this.http.post("http://localhost:3000/api/user/register", authData)
+     .pipe (this.toast.observe({
+      success: 'Logged in successfuly',
+      loading:'Logging in.... ',
+      error:'The email or Phone Number already exist'
+    }))
      .subscribe(response =>{
       console.log(response);
       this.router.navigate(['/login'])

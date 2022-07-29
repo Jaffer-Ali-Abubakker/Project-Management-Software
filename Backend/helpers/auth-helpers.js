@@ -22,6 +22,12 @@ module.exports ={
               });
           });
         })
+    },
+    emailcheck: (email,mobile) =>{
+        return new Promise(async (res, rej) =>{
+            let user =  User.findOne({ $or: [{ Email: email }, { mobile: mobile }] });
+            res(user)
+        })
     }
 }
 

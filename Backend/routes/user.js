@@ -6,10 +6,21 @@ const jwt = require("jsonwebtoken");
 const authHelpers = require("../helpers/auth-helpers");
 
 router.post("/register", (req, res, next) => {
-  authHelpers.doRegister(req.body).then((response) => {
-    res.status(201).json({
-      message: "User created",
-      result: response,
+  let email = req.body.email
+  let mobile = req.body.mobile
+  authHelpers.emailcheck(email, mobile).then((response)=>{
+    if(response){
+      res.status(401).json({
+        message:"User Already exist",
+        result: response
+      })
+    }
+    authHelpers.doRegister(req.body).then((response) => {
+      res.status(201).json({
+        message: "User created",
+        result: response,
+     })
+
     });
   });
 });

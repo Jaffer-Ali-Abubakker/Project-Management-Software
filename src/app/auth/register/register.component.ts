@@ -23,10 +23,7 @@ export class RegisterComponent implements OnInit {
       password:['',Validators.required],
       confirmPassword:['',Validators.required]
 
-    },{
-      Validators: Validation.match('password', 'confirmPassword')
-    }
-    );
+    });
 
 }
 get f(){
@@ -43,5 +40,4 @@ onRegister(){
     this.RegisterForm.value.mobile, 
     this.RegisterForm.value.password)
    }
-
 }
