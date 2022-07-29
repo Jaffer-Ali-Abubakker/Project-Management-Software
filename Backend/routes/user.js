@@ -5,25 +5,42 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const authHelpers = require("../helpers/auth-helpers");
 
-router.post("/register", (req, res, next) => {
-  let email = req.body.email
-  let mobile = req.body.mobile
-  authHelpers.emailcheck(email, mobile).then((response)=>{
-    if(response){
-      res.status(401).json({
-        message:"User Already exist",
-        result: response
-      })
-    }
-    authHelpers.doRegister(req.body).then((response) => {
-      res.status(201).json({
-        message: "User created",
-        result: response,
-     })
 
-    });
-  });
-});
+router.post('/register', (req, res, next) => {
+  console.log(req.body);
+  const { FullName, email, mobile, password } = req.body
+  if (!email || !password ) {
+      return res.status(422).json({error: "please fill the details"})
+  }
+
+  User.findOne({ email: email }).then((savedUser) => {
+      if (savedUser) {
+          return res.status(422).json({ error: "user already exists with that email" })
+      }
+
+      bcrypt.hash(password, 12).then((hashedPassword) => {
+          const user = new User({
+              FullName,
+              email,
+              mobile,
+              password: hashedPassword,
+          })
+
+          user.save().then((user) => {
+              res.json({ message: 'saved successfully' })
+          }).catch((err) => {
+              console.log(err);
+              if(err.code === 11000){
+                  return res.status(422).json({ error: "user name already taken" })
+              }
+          })
+      })
+
+  }).catch(() => {
+      console.log(err);
+  })
+
+})
 
 router.post("/login", (req, res, next) => {
   let fetchUser;

@@ -1,8 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators, ValidatorFn, ValidationErrors, AbstractControl } from "@angular/forms";
+import { FormGroup,FormControl, Validators, ValidatorFn, AbstractControl, ValidationErrors } from "@angular/forms";
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 import Validation  from "src/app/auth/utils/validation";
 
+export function passwordsMatchValidator(): ValidatorFn {
+  return(control: AbstractControl): ValidationErrors | null => {
+    const password = control.get('password')?.value;
+    const confirmPassword = control.get('confirmPassword')?.value;
+
+    if(password && confirmPassword && password !== confirmPassword){
+      return {
+        passwordsDontMatch: true
+      }
+      
+    }
+
+    return null;
+  }
+}
 
 @Component({
   selector: 'app-register',
@@ -10,34 +26,45 @@ import Validation  from "src/app/auth/utils/validation";
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  public RegisterForm! : FormGroup
-  submitted = false;
-  constructor(private formBuilder: FormBuilder, public authService: AuthService) { }
+  
+  RegisterForm = new FormGroup({
+    FullName: new FormControl('',Validators.required),
+    email: new FormControl('', [Validators.email, Validators.required]),
+    mobile: new FormControl('',Validators.required),
+    password: new FormControl('',[Validators.required,Validators.maxLength(4)]),
+    confirmPassword:new FormControl('',Validators.required)
 
-  ngOnInit(): void {
+  },
+  {validators: passwordsMatchValidator()}
+  );
 
-    this.RegisterForm = this.formBuilder.group({
-      FullName:['',Validators.required],
-      email:['',[Validators.required, Validators.email]],
-      mobile:['',Validators.required],
-      password:['',Validators.required],
-      confirmPassword:['',Validators.required]
 
-    });
+  constructor( public authService: AuthService) { }
 
+  ngOnInit(): void {}
+
+get FullName(){
+  return this.RegisterForm.get('FullName')
 }
-get f(){
-  return this.RegisterForm  .controls;
+get email(){
+  return this.RegisterForm.get('email')
+}
+get mobile(){
+  return this.RegisterForm.get('mobile')
+}
+get password(){
+  return this.RegisterForm.get('password')
+}
+get confirmPassword(){
+  return this.RegisterForm.get('confirmPassword')
 }
 
 onRegister(){
    if(this.RegisterForm.invalid){
     return;
    }
-   this.authService.createUser(
-    this.RegisterForm.value.FullName, 
-    this.RegisterForm.value.email, 
-    this.RegisterForm.value.mobile, 
-    this.RegisterForm.value.password)
+   const {FullName, email, mobile, password}: any = this.RegisterForm.value;
+   this.authService.createUser(FullName, email, mobile, password);
+   
    }
 }
