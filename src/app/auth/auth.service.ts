@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { Subject } from "rxjs";
+import { HotToastService } from '@ngneat/hot-toast';
 
 import { AuthData,AuthDataLogin } from './auth-data.model';
 
@@ -15,7 +16,7 @@ export class AuthService {
   private token: unknown;
   private authStatusListener = new Subject<boolean>();
 
-  constructor(private http: HttpClient, private router:Router) { }
+  constructor(private http: HttpClient, private router:Router,private toast: HotToastService) { }
   
 
   getToken(){
@@ -38,6 +39,11 @@ export class AuthService {
   login(email: string, password: string){
     const authDataLogin: AuthDataLogin = {email: email,  password: password}
     this.http.post<{token: string}>("http://localhost:3000/api/user/login", authDataLogin)
+    .pipe (this.toast.observe({
+      success: 'Logged in successfuly',
+      loading:'Logging in.... ',
+      error:'There was an error'
+    }))
     .subscribe(response =>{
       console.log(response);
       const token = response.token
@@ -45,7 +51,7 @@ export class AuthService {
       if(token){
         this.isAuthenticated = true;
         this.authStatusListener.next(true);
-        this.router.navigate(['/landing-page'])
+        this.router.navigate(['/'])
       }
 
     })

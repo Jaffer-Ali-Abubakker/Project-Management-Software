@@ -41,11 +41,11 @@
             <input matInput placeholder="Placeholder"
             type="password"
             formControlName="confirmPassword">
-            <mat-error  *ngIf="RegisterForm.controls['confirmPassword'].dirty && RegisterForm.hasError('required', 'confirmPassword')" >password is required</mat-error>
+            <mat-error *ngIf="RegisterForm.controls['confirmPassword'].dirty && RegisterForm.hasError('required', 'confirmPassword')" >password is required</mat-error>
           </mat-form-field>
-          <mat-error style="font-size: small;" *ngIf="RegisterForm.errors?.['passwordsDontMatch']">
-            Password should match
-          </mat-error>
+
+            <div *ngIf="f.confirmPassword.errors.Validation">Password and Confirm Password must be match.</div>
+
     
         <button mat-raised-button color="warn" type="submit">Register</button>
         

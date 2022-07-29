@@ -1,22 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators, ValidatorFn, ValidationErrors, AbstractControl } from "@angular/forms";
 import { AuthService } from '../auth.service';
+import Validation  from "src/app/auth/utils/validation";
 
-
-export function passwordsMatchValidator(): ValidatorFn {
-  return(control: AbstractControl): ValidationErrors | null =>{
-      const password = control.get('password')?.value;
-      const confirmPassword = control.get('confirmPassword')?.value;
-
-      if(password && confirmPassword && password !== confirmPassword){
-        return {
-          passwordsDontMatch: true
-        }
-      }
-
-      return null;
-  }   
-}
 
 @Component({
   selector: 'app-register',
@@ -37,9 +23,16 @@ export class RegisterComponent implements OnInit {
       password:['',Validators.required],
       confirmPassword:['',Validators.required]
 
-    });
+    },{
+      Validators: Validation.match('password', 'confirmPassword')
+    }
+    );
 
 }
+get f(){
+  return this.RegisterForm  .controls;
+}
+
 onRegister(){
    if(this.RegisterForm.invalid){
     return;

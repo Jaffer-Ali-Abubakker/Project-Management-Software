@@ -5,8 +5,8 @@
     <div class="shape"></div>
     <div class="shape"></div>
 </div>
-<form [formGroup]="loginForm" (ngSubmit)="UserSubmit()" *ngIf="!isLoading">
-    <h3>Login Here</h3>
+<form [formGroup]="loginForm" (ngSubmit)="UserSubmit()" *ngIf="!isAuthenticated">
+    <h3>Login Here</h3> 
     <mat-form-field  appearance="outline">
         <mat-label>Enter the Email</mat-label>
         <input matInput placeholder="Placeholder"
@@ -34,5 +34,4 @@
     <a class="signup-register" style="color: skyblue;" routerLink="/register">Click to SignUp</a>
   </div>
 </form>
-
 </body> 

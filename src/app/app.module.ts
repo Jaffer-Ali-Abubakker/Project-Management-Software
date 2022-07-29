@@ -14,6 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { AuthInterceptor } from './auth/auth-interceptor';
 import { LandingPageComponent } from './auth/landing-page/landing-page.component';
+import { HotToastModule } from '@ngneat/hot-toast';
 
 
 
@@ -35,7 +36,8 @@ import { LandingPageComponent } from './auth/landing-page/landing-page.component
     ReactiveFormsModule,
     FormsModule,
     MdbCheckboxModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HotToastModule.forRoot()
     
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],

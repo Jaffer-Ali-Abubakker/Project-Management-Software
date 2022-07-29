@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const authHelpers = require("../helpers/auth-helpers");
 
-router.post("/register", (req, res) => {
+router.post("/register", (req, res, next) => {
   authHelpers.doRegister(req.body).then((response) => {
     res.status(201).json({
       message: "User created",
@@ -20,7 +20,7 @@ router.post("/login", (req, res, next) => {
     .then((user) => {
       console.log(user);
       if (!user) {
-        return res.status(401).json({
+        return res.status(401).json({ 
           message: "Auth failed",
         });
       }
@@ -43,9 +43,7 @@ router.post("/login", (req, res, next) => {
       });
     })
     .catch((err) => {
-      return res.status(401).json({
-        message: "Auth failed",
-      });
+     console.log(err);
     });
 });
 

@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   faFacebook = faFacebook;
 
 public loginForm! : FormGroup
-isLoading = false;
+isAuthenticated = false;
 
   constructor(private formBuilder: FormBuilder, public authService: AuthService) {  }
 
@@ -29,7 +29,9 @@ isLoading = false;
     if(this.loginForm.invalid){
       return
     }
+
     this.authService.login(this.loginForm.value.email, this.loginForm.value.password);
   }
+
 
 }
