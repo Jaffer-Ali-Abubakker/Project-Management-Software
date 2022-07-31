@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Dongle&family=Open+Sans:wght@300;400&family=Righteous&family=Sarabun&display=swap');
+
+body{
+  overflow-x: hidden;
+}
+.container-fluid {
+   height: 230px;
+}
+.row{
+  padding-top: 20px;
+}
+.card-part-one{
+  max-width: 80%;
+  margin-left: 20px;
+  height: 180px;
+  border-radius: 5%;
+  
+}
+.row-2{
+  max-height: 500px;
+}
+.card-2{
+  max-width: 90%;
+  height: 60px;
+  margin-left: 30px;
+
+}
+.card-3{
+  background-color: rgb(255, 255, 255);
+  height: 60px;
+
+}
+.head-1{
+  font-size: 20px;
+  font-family:'Open Sans', sans-serif;
+  font-weight: 600;
+  margin-left: 20px;
+}
+.sub-head-1 {
+  margin-top: -16px;
+  font-family: 'Open Sans', sans-serif;
+  margin-left: 30px;
+}
+table {
+  width: 90%;
+  margin-left: 20px;
+  
+}
+.btn-1{
+  margin-left: 100px;
+  margin-left: 400px;
+}
+.row-two {
+  padding: 0;
+
+}
+h1{
+  font-family: 'Open Sans', sans-serif;
+}
