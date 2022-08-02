@@ -11,6 +11,8 @@ import { AngularMaterialModule   } from "../../angular-material.module";
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CreateProjectComponent } from './components/create-project/create-project.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -28,6 +30,9 @@ import { CreateProjectComponent } from './components/create-project/create-proje
     AngularMaterialModule,
     MatSidenavModule,
     FontAwesomeModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule
 
   ],
 })

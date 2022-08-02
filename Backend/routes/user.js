@@ -3,7 +3,6 @@ const User = require("../models/user");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const authHelpers = require("../helpers/auth-helpers");
 
 
 router.post('/register', (req, res, next) => {

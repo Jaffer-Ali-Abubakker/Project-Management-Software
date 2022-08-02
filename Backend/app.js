@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const cors = require ("cors")
 
 const userRoutes = require("./routes/user")
+const projectManagerRoutes = require('./routes/project-Manager')
 
 const app = experss();
 
@@ -34,5 +35,6 @@ app.use((req, res, next) => {
     next();
   });
 app.use("/api/user", userRoutes);
+app.use("/api/project-Manager", projectManagerRoutes)
 
 module.exports = app;
