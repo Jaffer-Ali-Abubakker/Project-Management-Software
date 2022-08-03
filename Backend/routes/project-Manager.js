@@ -1,4 +1,5 @@
 const express = require("express");
+
 const router = express.Router();
 const projectData = require("../models/project-model");
 
@@ -16,12 +17,11 @@ router.post("/create-project", async (req, res, next) => {
   });
 });
 
-router.get("/home", (req, res, next) => {
-  project.find().then((documents) => {
+router.get("/home", async (req, res, next) => {
+  const AllProject = projectData.find().then((documents) => {
     console.log(documents);
     res.status(200).json({
-      message: "project featch Successfully",
-      home: documents,
+      home: documents
     });
   });
 });

@@ -1,15 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Router } from "@angular/router";
-import { Observable, Subject } from "rxjs";
+import { map, Observable, Subject } from "rxjs";
 import { HotToastService } from '@ngneat/hot-toast';
 
-import { projectData,getprojectData } from "./project-data.model";
+import { getprojectData, projectData} from "./project-data.model";
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class projectDataService {
+  private _url:string = 'http://localhost:3000/api/project-Manager/home'
+
+
 
   constructor(private http: HttpClient, private router: Router, private toast: HotToastService) { }
 
@@ -41,7 +46,8 @@ export class projectDataService {
       })
   }
   getProject(): Observable<getprojectData[]>{
-     return this.http.get<getprojectData[]>('http://localhost:3000/api/home')
+     return this.http.get<getprojectData[]>(this._url)
+     .pipe(map(response => response))
   }
 }
 

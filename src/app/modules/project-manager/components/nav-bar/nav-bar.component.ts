@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import { faDashboard, faTable } from "@fortawesome/free-solid-svg-icons";
+import { faDashboard, faTable, faUsers,faCreditCard } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-nav-bar',
@@ -11,7 +11,9 @@ import { faDashboard, faTable } from "@fortawesome/free-solid-svg-icons";
 })
 export class NavBarComponent {
   faDashboard = faDashboard
-  faTable = faTable
+  faTable = faTable;
+  faUsers = faUsers;
+  faCreditCard = faCreditCard;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
