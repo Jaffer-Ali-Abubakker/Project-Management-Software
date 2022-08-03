@@ -21,7 +21,12 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.projectService.getProject()    
-    .subscribe(data => this.project = data)
+    .subscribe(data => {this.project = data,
+    console.log(data);
+    }
+      
+      )
+    
   }
   
 }

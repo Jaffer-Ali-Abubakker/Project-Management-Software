@@ -13,6 +13,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CreateProjectComponent } from './components/create-project/create-project.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AllUsersComponent } from './components/all-users/all-users.component';
 
 
 
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     NavBarComponent,
     HomeComponent,
     AllProjectsComponent,
-    CreateProjectComponent
+    CreateProjectComponent,
+    AllUsersComponent
   ],
   imports: [
     CommonModule,

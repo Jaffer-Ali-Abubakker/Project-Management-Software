@@ -20,9 +20,9 @@ router.post("/create-project", async (req, res, next) => {
 router.get("/home", async (req, res, next) => {
   const AllProject = projectData.find().then((documents) => {
     console.log(documents);
-    res.status(200).json({
-      home: documents
-    });
+    res.status(200).json(
+      documents
+    );
   });
 });
 
