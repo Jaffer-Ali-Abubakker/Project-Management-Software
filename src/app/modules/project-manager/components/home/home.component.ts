@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import { faProjectDiagram } from "@fortawesome/free-solid-svg-icons";
-import { catchError, map, throwError } from 'rxjs';
 import { getprojectData } from "../project-data.model";
 import { projectDataService } from "../projectManager.service";
+import {MatPaginator} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
 
 
 
@@ -12,7 +14,13 @@ import { projectDataService } from "../projectManager.service";
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  project: getprojectData[] = []
+  displayedColumns: string[] = ['projectTitle', 'projectName', 'projectType', 'created', 'deadLine'];
+  dataSource : any
+  project: getprojectData[] = [];
+
+  @ViewChild(MatPaginator) paginator !: MatPaginator;
+  @ViewChild(MatSort) Sort !: MatSort;
+
 
   faProjectDiagram = faProjectDiagram;
  
@@ -20,13 +28,18 @@ export class HomeComponent implements OnInit {
   constructor(public projectService: projectDataService) {}
 
   ngOnInit(): void {
-    this.projectService.getProject()    
-    .subscribe(data => {this.project = data,
-    console.log(data);
-    }
+    this.GetProject();
+  }
+
+  GetProject(){
+    this.projectService.getProject().subscribe(result =>{
+      this.project = result;
+
       
-      )
-    
+      this.dataSource = new MatTableDataSource<getprojectData>(this.project)
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.Sort = this.Sort;
+    })
   }
   
 }

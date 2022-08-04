@@ -22,7 +22,7 @@ body{
 .card-2{
   max-width: 90%;
   height: 60px;
-  margin-left: 30px;
+  margin-left: 50px;
 
 }
 .card-3{
@@ -42,13 +42,14 @@ body{
   margin-left: 30px;
 }
 table {
-  width: 90%;
-  margin-left: 20px;
-  
+  width: 100%;
+ 
 }
 .btn-1{
-  margin-left: 100px;
-  margin-left: 400px;
+ margin-top: -20px;
+}
+.btn-2{
+  margin-left: 50px;
 }
 .row-two {
   padding: 0;
@@ -56,4 +57,17 @@ table {
 }
 h1{
   font-family: 'Open Sans', sans-serif;
+}
+.table-card{
+  border-radius: 20px;
+  margin-left: 20px;
+
+}
+.form-serach{
+  margin-top: -40px;
+  zoom: 80%;
+  border-color: blue;
+}
+.project-head{
+  margin-top: -20px;
 }

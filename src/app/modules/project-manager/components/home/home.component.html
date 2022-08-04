@@ -23,42 +23,82 @@
       <div class="col-8">
         <div class="row">
           <mat-card class="card-2">
-            <div class="row row-two">
-              <div class="col-md-3">
-                <h2>Your Projects</h2>
-              </div>
-              <div class="col-md-4">
-                <a class="btn-1" routerLink="./create-project" mat-raised-button color="warn">
+            <div class="row">
+              <div class="col order-last btn-1">
+                <a class="btn-2" routerLink="./create-project" mat-raised-button color="warn">
                   <fa-icon [icon]="faProjectDiagram"></fa-icon> Create Project
                 </a>
+              </div>
+              <div class="col">
+                <p class="form-serach">
+                <mat-form-field appearance="outline">
+                  <mat-label>Search Project</mat-label>
+                  <input matInput placeholder="Search">
+                  <mat-icon matSuffix>youtube_searched_for</mat-icon>
+                </mat-form-field>
+              </p>
+              </div>
+              <div class="col order-first">
+                <h2 class="project-head">My project</h2> 
               </div>
             </div>
           </mat-card>
         </div>
         <div class="col-12">
-          <div class="mat-elevation-z8">
-           <table  class="table table-bordered">
-            <thead>
-              <tr>
-                <th>project Title</th>
-                <th>projectName </th>
-                <th>projectType</th>
-                <th>created </th>
-                <th>deadLine</th>
-                <th> </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let project of project">
-                <td>{{project.projectTitle}}</td>
-                <td>{{project.projectName}}</td>
-                <td>{{project.projectType}}</td>
-                <td>{{project.created}}</td>
-                <td>{{project.deadLine}}</td>
-              </tr>
-            </tbody>
+          <div class="mat-elevation-z8 table-card">
+            <table mat-table [dataSource]="dataSource" matSort 
+            class="mat-elevation-z8">
+        
+          <!-- Position Column -->
+          <ng-container matColumnDef="projectTitle">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number">
+              Project   Title
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.projectTitle}} </td>
+          </ng-container>
+        
+          <!-- Name Column -->
+          <ng-container matColumnDef="projectName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
+              Project Name
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.projectName}} </td>
+          </ng-container>
+        
+          <!-- Weight Column -->
+          <ng-container matColumnDef="projectType">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by weight">
+              Project Type
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.projectType}} </td>
+          </ng-container>
+        
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="created">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
+              Created
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.created}} </td>
+          </ng-container>
+          <!-- deadline -->
+          <ng-container matColumnDef="deadLine">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
+              Dead Line
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.deadLine}} </td>
+          </ng-container>
+        
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+       
+        <!-- <mat-paginator #scheduledOrdersPaginator [pageSizeOptions]="[5, 10, 20]">
 
-           </table>
+        </mat-paginator> -->
+
+        <mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons></mat-paginator>
+
+
           </div>
         </div>
       </div>

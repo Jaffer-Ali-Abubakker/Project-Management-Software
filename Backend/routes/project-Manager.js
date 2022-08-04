@@ -2,6 +2,7 @@ const express = require("express");
 
 const router = express.Router();
 const projectData = require("../models/project-model");
+const userData = require("../models/user")
 
 router.post("/create-project", async (req, res, next) => {
   console.log(req.body);
@@ -25,5 +26,14 @@ router.get("/home", async (req, res, next) => {
     );
   });
 });
+
+router.get('/alluser', async(req,res,next)=>{
+  const Alluser = userData.find().then((user)=>{
+    console.log(user);
+    res.status(200).json(
+      user
+    )
+  })
+})
 
 module.exports = router;

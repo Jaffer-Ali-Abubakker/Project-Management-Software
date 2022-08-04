@@ -5,14 +5,15 @@ import { map, Observable, Subject } from "rxjs";
 import { HotToastService } from '@ngneat/hot-toast';
 
 import { getprojectData, projectData} from "./project-data.model";
-
+import { AuthData } from "../../../auth/auth-data.model";
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class projectDataService {
-  private _url:string = 'http://localhost:3000/api/project-Manager/home'
+  private _url:string = 'http://localhost:3000/api/project-Manager/home';
+  private user_url: string = 'http://localhost:3000/api/project-Manager/alluser';
 
 
 
@@ -47,6 +48,10 @@ export class projectDataService {
   }
   getProject(): Observable<getprojectData[]>{
      return this.http.get<getprojectData[]>(this._url)
+     .pipe(map(response => response))
+  }
+  getUser(): Observable<AuthData[]>{
+     return this.http.get<AuthData[]>(this.user_url)
      .pipe(map(response => response))
   }
 }
