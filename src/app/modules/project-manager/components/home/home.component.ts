@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   displayedColumns: string[] = ['projectTitle', 'projectName', 'projectType', 'created', 'Details','Edit'];
   dataSource : any
   project: getprojectData[] = [];
-  ProjectData: any;
+  ProjectData: getprojectData[] = [];
 
   @ViewChild(MatPaginator) paginator !: MatPaginator;
   @ViewChild(MatSort) Sort !: MatSort;
@@ -43,12 +43,10 @@ export class HomeComponent implements OnInit {
       this.dataSource.Sort = this.Sort;
     })
   }
-  ProjectDetals(data: any){
-    console.warn(data);
-  
-        
+  ProjectDetals(data: getprojectData[]){
+    this.projectService.projectView(data)  
+       
   }
-  
 }
 
 

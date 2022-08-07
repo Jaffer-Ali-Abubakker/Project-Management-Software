@@ -12,6 +12,8 @@ import { AuthData } from "../../../auth/auth-data.model";
   providedIn: 'root'
 })
 export class projectDataService {
+  private _ProjectDetailsToCom = new Subject<string>();
+  projectDetails$ = this._ProjectDetailsToCom.asObservable();
   private _url:string = 'http://localhost:3000/api/project-Manager/home';
   private user_url: string = 'http://localhost:3000/api/project-Manager/alluser';
   private update_user: string = 'http://localhost:3000/api/project-Manager/updateUser';
@@ -55,9 +57,9 @@ export class projectDataService {
      return this.http.get<AuthData[]>(this.user_url)
      .pipe(map(response => response))
   }
-  AssignPosition(data: any, id: number){
-   
-  }
+   projectView(project: any){
+    this._ProjectDetailsToCom.next(project)
+   }
 }
 
 

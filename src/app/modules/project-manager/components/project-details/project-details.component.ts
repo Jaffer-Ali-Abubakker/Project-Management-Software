@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { projectDataService } from "../projectManager.service";
+import { getprojectData } from "../project-data.model";
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-project-details',
@@ -6,16 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./project-details.component.scss']
 })
 export class ProjectDetailsComponent implements OnInit {
-   projectData: any
-   reciveData($event: any){
-    this.projectData = ($event)
-    console.log(this.projectData);
-    
-   }
-
-  constructor() { }
+  project: any = []
+ 
+  constructor(private ProjectService: projectDataService) { }
 
   ngOnInit(): void {
+    this.ProjectService.projectDetails$
+    .subscribe(data  => {this.project = data,
+      console.log(data);
+    })
   }
 
 }
+
