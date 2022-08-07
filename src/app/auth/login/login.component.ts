@@ -4,6 +4,7 @@ import { AuthService } from '../auth.service';
 import { faGoogle, faFacebook  } from '@fortawesome/free-brands-svg-icons';
 
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

@@ -14,9 +14,10 @@ import { MatSort } from '@angular/material/sort';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  displayedColumns: string[] = ['projectTitle', 'projectName', 'projectType', 'created', 'deadLine'];
+  displayedColumns: string[] = ['projectTitle', 'projectName', 'projectType', 'created', 'Details','Edit'];
   dataSource : any
   project: getprojectData[] = [];
+  ProjectData: any;
 
   @ViewChild(MatPaginator) paginator !: MatPaginator;
   @ViewChild(MatSort) Sort !: MatSort;
@@ -26,6 +27,7 @@ export class HomeComponent implements OnInit {
  
 
   constructor(public projectService: projectDataService) {}
+
 
   ngOnInit(): void {
     this.GetProject();
@@ -40,6 +42,11 @@ export class HomeComponent implements OnInit {
       this.dataSource.paginator = this.paginator;
       this.dataSource.Sort = this.Sort;
     })
+  }
+  ProjectDetals(data: any){
+    console.warn(data);
+  
+        
   }
   
 }

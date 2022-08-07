@@ -1,38 +1,43 @@
 .mat-card-1 {
+    width: 450px;
     height: 400px;
     margin-top: 50px;
+    background-color: #3f51b5;
+    border-radius: 20px;
 }
 .mat-card-2{
     height: 100px;
     margin-top: 50px;
+    width: 450px;
+    
 }
 
 .mat-card-3 {
     height: 550px;
     margin-top: 50px;
 }
-.demo-table {
+table {
     width: 100%;
   }
-  
-  .mat-column-demo-position {
-    width: 32px;
-    border-right: 1px solid currentColor;
-    padding-right: 24px;
-    text-align: center;
+  .example-margin-2{
+    margin-left: 30px;
   }
-  
-  .mat-column-demo-name {
-    padding-left: 16px;
-    font-size: 20px;
+  button{
+   margin-top: 20px;
+   margin-left:400px;
   }
-  
-  .mat-column-demo-weight {
-    font-style: italic;
+  .icon-one {
+    zoom: 80%;
+    background-color: #3f51b5;
+    color: white;
   }
-  
-  .mat-column-demo-symbol {
-    width: 32px;
-    text-align: center;
-    font-weight: bold;
+  #b{
+    margin-left: 10px;
+  }
+  .mat-card-4{
+    width: 200px;
+    height: 70px;
+    margin-left: 230px;
+    margin-top: -80px;
+    background-color: #3f51b5;
   }

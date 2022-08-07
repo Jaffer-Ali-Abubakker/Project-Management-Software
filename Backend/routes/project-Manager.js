@@ -35,5 +35,8 @@ router.get('/alluser', async(req,res,next)=>{
     )
   })
 })
+router.put('/updateUser', (req,res,next)=>{
+  console.log(req.body);
+})
 
 module.exports = router;

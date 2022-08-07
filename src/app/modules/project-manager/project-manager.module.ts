@@ -14,6 +14,8 @@ import { CreateProjectComponent } from './components/create-project/create-proje
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AllUsersComponent } from './components/all-users/all-users.component';
+import { EditProjectComponent } from './components/edit-project/edit-project.component';
+import { ProjectDetailsComponent } from './components/project-details/project-details.component';
 
 
 
@@ -24,7 +26,9 @@ import { AllUsersComponent } from './components/all-users/all-users.component';
     HomeComponent,
     AllProjectsComponent,
     CreateProjectComponent,
-    AllUsersComponent
+    AllUsersComponent,
+    EditProjectComponent,
+    ProjectDetailsComponent
   ],
   imports: [
     CommonModule,
