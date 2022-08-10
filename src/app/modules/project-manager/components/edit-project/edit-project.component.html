@@ -1,0 +1,77 @@
+
+<mat-card class="mat-card-1">
+<h1 class="head-1" mat-dialog-title>Edit Project Form</h1>
+</mat-card>
+<div mat-dialog-content class="mat-dialog-content">
+  <form [formGroup]="projectForm">
+  <div class="d-flex align-items-start bg-light mb-3" style="height: 100px;">
+      <div class="col">
+        <mat-form-field appearance="outline">
+            <mat-label>Project Title</mat-label>
+            <input matInput placeholder=""
+            formControlName="projectTitle">
+          </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="outline">
+            <mat-label>Project Name</mat-label>
+            <input matInput placeholder="Placeholder"
+            formControlName="projectName">
+          </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="outline">
+            <mat-label>Project Type</mat-label>
+            <input matInput placeholder="Placeholder"
+            formControlName="projectType">
+          </mat-form-field>
+      </div>
+    </div>
+    <div class="d-flex align-items-center bg-light mb-3" style="height: 100px;">
+      <div class="col">
+        <mat-form-field appearance="outline">
+            <mat-label>Created</mat-label>
+            <input type="datetime-local" matInput placeholder="Placeholder"
+            formControlName="created">
+          </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="outline">
+            <mat-label>Dead Line</mat-label>
+            <input type="datetime-local" matInput placeholder="Placeholder"
+            formControlName="deadLine">
+          </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="outline">
+            <mat-label>Project Features</mat-label>
+            <textarea matInput formControlName="features"></textarea>
+          </mat-form-field>
+      </div>
+    </div>
+    <div class="d-flex align-items-end bg-light mb-3" style="height: 100px;">
+      <div class="col">
+        <mat-form-field appearance="outline">
+            <mat-label>Select</mat-label>
+            <mat-select formControlName="Developer">
+              <mat-option value="Developer name">Developer name</mat-option>
+              <mat-option value="Developer name">Developer name</mat-option>
+            </mat-select>
+          </mat-form-field> 
+      </div>
+      <div class="col">
+        <mat-form-field appearance="outline">
+            <mat-label>Select</mat-label>
+            <mat-select formControlName="submitter">
+              <mat-option value="Submitter name">Submitter name</mat-option>
+              <mat-option value="Submitter name">Submitter name</mat-option>
+            </mat-select>
+          </mat-form-field>
+      </div>
+      <div class="col">
+        <button class="button-1" mat-raised-button color="primary" (click)="UpdateProject()">Update</button>
+      </div>
+    </div>
+  </form>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>

@@ -5,6 +5,8 @@ import { projectDataService } from "../projectManager.service";
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
+import {MatDialog} from '@angular/material/dialog';
+import { EditProjectComponent } from '../edit-project/edit-project.component';
 
 
 
@@ -17,7 +19,7 @@ export class HomeComponent implements OnInit {
   displayedColumns: string[] = ['projectTitle', 'projectName', 'projectType', 'created', 'Details','Edit'];
   dataSource : any
   project: getprojectData[] = [];
-  ProjectData: getprojectData[] = [];
+
 
   @ViewChild(MatPaginator) paginator !: MatPaginator;
   @ViewChild(MatSort) Sort !: MatSort;
@@ -26,7 +28,7 @@ export class HomeComponent implements OnInit {
   faProjectDiagram = faProjectDiagram;
  
 
-  constructor(public projectService: projectDataService) {}
+  constructor(public projectService: projectDataService, private dialog : MatDialog) {}
 
 
   ngOnInit(): void {
@@ -43,9 +45,18 @@ export class HomeComponent implements OnInit {
       this.dataSource.Sort = this.Sort;
     })
   }
-  ProjectDetals(data: getprojectData[]){
-    this.projectService.projectView(data)  
-       
+
+  UpdateProject(element: any) {
+    console.log(element);
+    const dialogRef = this.dialog.open(EditProjectComponent,{
+      width: '50%',
+      data:element
+    }).afterClosed().subscribe(val=>{
+      if(val === 'update'){
+        this.GetProject();
+      }
+    })
+
   }
 }
 

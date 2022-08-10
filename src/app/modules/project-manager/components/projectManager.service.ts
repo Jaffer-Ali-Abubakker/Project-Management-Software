@@ -16,7 +16,7 @@ export class projectDataService {
   projectDetails$ = this._ProjectDetailsToCom.asObservable();
   private _url:string = 'http://localhost:3000/api/project-Manager/home';
   private user_url: string = 'http://localhost:3000/api/project-Manager/alluser';
-  private update_user: string = 'http://localhost:3000/api/project-Manager/updateUser';
+  private update_project: string = 'http://localhost:3000/api/project-Manager/updateProject';
 
 
 
@@ -57,10 +57,8 @@ export class projectDataService {
      return this.http.get<AuthData[]>(this.user_url)
      .pipe(map(response => response))
   }
-   projectView(project: any){
-    this._ProjectDetailsToCom.next(project)
-   }
+  getprojectupdate(data: any, id: any){
+    return this.http.put<any>(`${this.update_project}/${id}`, data)
+  }
 }
-
-
 

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatNativeDateModule } from "@angular/material/core";
 
 
 import { ProjectManagerRoutingModule } from './project-manager-routing.module';
@@ -38,7 +39,8 @@ import { ProjectDetailsComponent } from './components/project-details/project-de
     FontAwesomeModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatNativeDateModule
 
   ],
 })

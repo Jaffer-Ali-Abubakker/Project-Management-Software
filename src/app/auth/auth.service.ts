@@ -58,7 +58,6 @@ export class AuthService {
         this.authStatusListener.next(true);
         this.router.navigate(['/'])
       }
-
     })
   }
 }
