@@ -8,7 +8,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color: #0d0c0e;
+    background-color: #483c54;
 
 }
 .background{
@@ -38,7 +38,7 @@ body{
         to right,
         #ff512f,
         #f09819
-    );
+    );  
     right: -30px;
     bottom: -80px;
 }
@@ -64,8 +64,8 @@ form *{
     border: none;
 }
 form h3{
-    font-family: 'Cinzel', serif;
-    font-size: 32px;
+    font-family: 'Dongle', sans-serif;
+    font-size: 62px;
     font-weight: 500;
     line-height: 42px;
     text-align: center;
@@ -147,4 +147,5 @@ a{
 }
 .signup-register{
     font-size: smaller;
+    
 }

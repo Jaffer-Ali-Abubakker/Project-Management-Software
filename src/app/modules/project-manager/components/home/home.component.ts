@@ -7,6 +7,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import {MatDialog} from '@angular/material/dialog';
 import { EditProjectComponent } from '../edit-project/edit-project.component';
+import { ProjectDetailsComponent } from "../project-details/project-details.component";
 
 
 
@@ -57,6 +58,12 @@ export class HomeComponent implements OnInit {
       }
     })
 
+  }
+  ProjectDetails(element: any){
+    const dialogRef = this.dialog.open(ProjectDetailsComponent,{
+      width: '40%',
+      data:element
+    })
   }
 }
 

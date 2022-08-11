@@ -41,6 +41,7 @@ export class AllUsersComponent implements OnInit {
   }
 
    AssignPosition(data: any){
-      this.userData = new data;
+      console.log(data);
+      
    }
 }

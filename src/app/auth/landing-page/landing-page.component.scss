@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Dongle&family=Open+Sans&display=swap');
 
-
+body{
+  overflow-x: hidden;
+}
 nav{
     height: 80px;
 }
@@ -47,14 +49,14 @@ nav{
     margin-right: 100px;
   }
  .head-3{
-  margin-top: 50px;
-  font-size: larger;
+  margin-top: 40px;
+  font-size: large;
   color: #807f88;
   
  }
  .head-4{
-  font-size: larger;
-  margin-right: 230px;
+  font-size: large;
+  margin-right: 250px;
   color: #807f88;
  }
  @media (max-width: 1399px) {
@@ -127,6 +129,10 @@ nav{
 }
 .btn-1{
   margin-right: 20px;
+}
+.nav-link{
+  font-family: 'Dongle', sans-serif;
+  font-size: 40px;
 }
 
 

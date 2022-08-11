@@ -90,7 +90,7 @@
           <ng-container matColumnDef="Details">
             <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
             </th>
-            <td mat-cell *matCellDef="let element"><a  routerLink="../Project-Details">Details</a></td>
+            <td mat-cell *matCellDef="let element"><button mat-button style="color: rgb(94, 94, 214);" (click)="ProjectDetails(element)">Project Details</button></td>
           </ng-container>
           <ng-container matColumnDef="Edit">
             <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
