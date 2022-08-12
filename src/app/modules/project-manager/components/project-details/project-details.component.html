@@ -1,38 +1,51 @@
- <mat-card class="mat-card-1">
+ <mat-card class="mat-card-main">
+   <h1 class="head-1">Project Details</h1>
+ </mat-card>
+ <mat-card class="mat-card-1" *ngFor="let name of project">
   <div class="row">
     <div class="col-sm-5 col-md-6">
       <h2>Project Title</h2>
-      <p>project #1</p>
+      <div>
+      <p class="projectTitle">{{name.projectTitle}}</p>
+    </div>
     </div>
     <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
       <h2>Project Name</h2>
-      <p>Project Name</p>
+      <p class="projectName">{{name.projectName}}</p>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-5 col-md-6">
         <h2>Submitter</h2>
-        <p>Submitter name</p>
+        <p class="submitter">{{name.submitter}}</p>
     </div>
     <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
       <h2>
         Project Type
       </h2>
-      <p>E-commerce web site</p>
+      <p class="projectType">{{name.projectType}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-5 col-md-6">
+        <h2>Developer</h2>
+        <p class="Developer">{{name.Developer}}</p>
     </div>
   </div>
   <mat-progress-bar mode="buffer"></mat-progress-bar>
   <div class="row">
     <div class="col-sm-5 col-md-6">
-        <mat-card class="mat-card-2"> </mat-card>
+        <mat-card class="mat-card-2"> 
+          {{name.features}}
+        </mat-card>
     </div>
     <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
         <h2 class="C-date">Created Date</h2>
-        <p>
-            11/5//2022
+        <p class="created">
+            {{name.created}}
         </p>
         <h2>Dead Line</h2>
-        <p>11/6/2022</p>
+        <p class="deadLine">{{name.deadLine}</p>
     </div>
   </div>
   <mat-progress-bar mode="buffer" class="bar-1"></mat-progress-bar>   

@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AllUsersComponent } from './components/all-users/all-users.component';
 import { EditProjectComponent } from './components/edit-project/edit-project.component';
 import { ProjectDetailsComponent } from './components/project-details/project-details.component';
+import { UserPositionComponent } from './components/user-position/user-position.component';
 
 
 
@@ -29,7 +30,8 @@ import { ProjectDetailsComponent } from './components/project-details/project-de
     CreateProjectComponent,
     AllUsersComponent,
     EditProjectComponent,
-    ProjectDetailsComponent
+    ProjectDetailsComponent,
+    UserPositionComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,22 @@
+
+<mat-card class="mat-card-2"> 
+    <form [formGroup]="Userassignform" (ngSubmit)="assignUser()">
+    <mat-form-field appearance="outline">
+      <mat-label>Select me</mat-label>
+      <mat-hint align="end">Select the User position</mat-hint>
+      <mat-select formControlName="position">
+        <mat-option value="Developer">Developer</mat-option>
+        <mat-option value="Submitter">Submiter</mat-option>
+      </mat-select>
+     
+    </mat-form-field>
+    <mat-card class="mat-card-4">
+        <div *ngFor="let name of childPost">
+         <p class="p-tag1">{{name.FullName}}</p>
+         <input type="text" formControlName="userId" [(ngModel)]="name._id" hidden>
+         <p class="p-tag2">{{name.email}}</p>
+        </div>
+    </mat-card>
+    <button mat-raised-button color="primary" class="btn-1">Submit</button>
+</form>
+  </mat-card>   

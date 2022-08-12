@@ -60,5 +60,8 @@ export class projectDataService {
   getprojectupdate(data: any, id: any){
     return this.http.put<any>(`${this.update_project}/${id}`, data)
   }
+  updateUserPosition(position: any, userId: any){
+
+  }
 }
 
