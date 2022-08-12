@@ -4,7 +4,7 @@ import { Router } from "@angular/router";
 import { map, Observable, Subject } from "rxjs";
 import { HotToastService } from '@ngneat/hot-toast';
 
-import { getprojectData, projectData} from "./project-data.model";
+import { getprojectData, projectData,userData} from "./project-data.model";
 import { AuthData } from "../../../auth/auth-data.model";
 
 
@@ -61,7 +61,14 @@ export class projectDataService {
     return this.http.put<any>(`${this.update_project}/${id}`, data)
   }
   updateUserPosition(position: any, userId: any){
-
+    const UserData : userData = {
+      position: position,
+      userId: userId
+    }
+    console.log(UserData);
+    
+    
+     return this.http.post<any>('http://localhost:3000/api/user/updateProject',UserData)
   }
 }
 

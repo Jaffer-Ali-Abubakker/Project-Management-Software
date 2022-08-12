@@ -45,7 +45,6 @@ router.post("/login", (req, res, next) => {
   let fetchUser;
   User.findOne({ email: req.body.email })
     .then((user) => {
-      console.log(user);
       if (!user) {
         return res.status(401).json({ 
           message: "Auth failed",
@@ -73,6 +72,10 @@ router.post("/login", (req, res, next) => {
      console.log(err);
     });
 });
+
+router.post('/updateProject', (req,res)=>{
+  console.log(req.body);
+})
 
 
 module.exports = router;

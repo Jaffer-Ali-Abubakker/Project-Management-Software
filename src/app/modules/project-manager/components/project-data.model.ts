@@ -19,3 +19,7 @@ export interface getprojectData{
     Developer: string;
     submitter: string;
 }
+export interface userData{
+    position: any;
+    userId: any
+}

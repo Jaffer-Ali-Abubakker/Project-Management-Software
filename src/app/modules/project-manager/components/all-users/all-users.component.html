@@ -36,20 +36,7 @@
         
           </mat-card>
            
-          <mat-card class="mat-card-2"> 
-            <mat-form-field appearance="outline">
-              <mat-label>Select me</mat-label>
-              <mat-select>
-                <mat-option value="Developer">Developer</mat-option>
-                <mat-option value="Submitter">Submitter</mat-option>
-              </mat-select>
-              <mat-hint align="end">Select the User position</mat-hint>
-            </mat-form-field>
-            <mat-card class="mat-card-4">
-                
-            </mat-card>
-
-          </mat-card>
+          <app-user-position class="mat-card-4" [childPost]="parentPost"></app-user-position>
 
         </div>
         

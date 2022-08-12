@@ -12,8 +12,9 @@ const routes: Routes = [
   {path: "login", component: LoginComponent},
   {path: "register", component: RegisterComponent},
   {path: "",redirectTo: "/", pathMatch:'full' },
-  {path:"project-manager", loadChildren: () => import('./modules/project-manager/project-manager.module').then((m)=> m.ProjectManagerModule),
- },
+  {path: "developer", loadChildren:() => import('./modules/developer/developer.module').then((m)=> m.DeveloperModule),},
+  {path:"project-manager", loadChildren: () => import('./modules/project-manager/project-manager.module').then((m)=> m.ProjectManagerModule),},
+ 
   
 
 ];

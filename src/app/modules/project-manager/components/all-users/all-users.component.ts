@@ -16,8 +16,7 @@ export class AllUsersComponent implements OnInit {
   displayedColumns: string[] = ['UserName', 'Email','Add'];
   dataSource : any;
   User: AuthData[] = []
-  type: any;
-  userData: any;
+  parentPost: any[] = []
   @ViewChild(MatPaginator) paginator !: MatPaginator;
   @ViewChild(MatSort) Sort !: MatSort;
 
@@ -41,7 +40,7 @@ export class AllUsersComponent implements OnInit {
   }
 
    AssignPosition(data: any){
-      console.log(data);
+      this.parentPost.push(data)
       
    }
 }
