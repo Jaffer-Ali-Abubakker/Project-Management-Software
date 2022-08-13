@@ -73,7 +73,7 @@ router.post("/login", (req, res, next) => {
     });
 });
 
-router.post('/updateProject', (req,res)=>{
+router.put('/updateProject', (req,res)=>{
   console.log(req.body);
 })
 

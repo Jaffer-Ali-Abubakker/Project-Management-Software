@@ -66,9 +66,7 @@ export class projectDataService {
       userId: userId
     }
     console.log(UserData);
-    
-    
-     return this.http.post<any>('http://localhost:3000/api/user/updateProject',UserData)
+     return this.http.put('http://localhost:3000/api/user/updateProject',UserData)
   }
 }
 
