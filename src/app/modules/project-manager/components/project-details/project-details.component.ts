@@ -1,6 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { projectDataService } from "../projectManager.service";
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-project-details',
@@ -10,8 +9,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 export class ProjectDetailsComponent implements OnInit {
   project: any = []
  
-  constructor(private ProjectService: projectDataService,
-    @Inject(MAT_DIALOG_DATA) public ProjectData: any) { }
+  constructor( @Inject(MAT_DIALOG_DATA) public ProjectData: any) { }
 
   ngOnInit(): void {
      let result = this.ProjectData

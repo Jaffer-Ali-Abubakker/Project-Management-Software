@@ -1,0 +1,101 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+          <mat-card class="mat-card-1">
+            <div class="row">
+            <mat-card class="mat-card-1-5">
+                <div>
+              <h2 class="head-1">Update project Details</h2>
+                </div>
+            </mat-card>
+            </div>
+            <div class="row">
+                <div class="col-12 form-one">
+                    <mat-form-field appearance="outline" class="mat-form-field-one">
+                        <mat-label>Project Title</mat-label>
+                        <input matInput placeholder="eg:- Project ##">
+                        <mat-icon matSuffix> border_color</mat-icon>
+                      </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <mat-form-field appearance="outline" class="mat-form-field-one">
+                        <mat-label>Project Name</mat-label>
+                        <input matInput placeholder="eg:- Nike">
+                        <mat-icon matSuffix> text_fields</mat-icon>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <mat-form-field appearance="outline" class="mat-form-field-one">
+                        <mat-label>Select Project Status</mat-label>
+                        <mat-select>
+                          <mat-option value="option" style="color: red;">processing</mat-option>
+                          <mat-option value="option" style="color: blue;">completed</mat-option>
+                          <mat-option value="option" style="color: green;">Uploaded</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </div>  
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <button mat-raised-button color="primary" class="btn-1">Submit</button>
+                </div>
+            </div>
+          </mat-card>
+        </div>
+        <div class="col-8">
+          <mat-card class="mat-card-2">
+            <div class="row">
+                <mat-card class="mat-card-2-5">
+                    <div>
+                        <h2 class="head-1">Upload Project</h2>
+                    </div>
+                </mat-card>
+            </div>
+            <div class="row row-upload">
+                <div class="col-6">
+                    <mat-form-field appearance="outline" class="mat-form-field-one">
+                        <mat-label>Project Title</mat-label>
+                        <input matInput placeholder="eg:- Project ##">
+                        <mat-icon matSuffix> border_color</mat-icon>
+                      </mat-form-field>
+                </div>
+                <div class="col-6">
+                    <mat-form-field appearance="outline" class="mat-form-field-one">
+                        <mat-label>Project Name</mat-label>
+                        <input matInput placeholder="eg:- Nike">
+                        <mat-icon matSuffix> text_fields</mat-icon>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row row-upload-2">
+                <div class="col-12">
+                <mat-card class="mat-card-upload">
+                    <mat-form-field appearance="outline" class="textarea">
+                        <mat-label>Comment </mat-label>
+                        <textarea matInput></textarea>
+                      </mat-form-field>
+                </mat-card>
+                </div>
+            </div>
+            <div class="row row-upload-3">
+                <div class="col-6">
+                    <mat-form-field appearance="outline" class="mat-form-field-two">
+                        <mat-label>GitHub Repository</mat-label>
+                        <input matInput placeholder="eg:- https://github.com/Jaffer-ali920/Todo-Angular.git">
+                        <mat-icon matSuffix>cloud_upload</mat-icon>
+                      </mat-form-field>
+                </div>
+                <div class="col-6">
+                    <div class="row-button">
+                    <button mat-raised-button color="primary" class="btn-2">Upload</button>
+                  </div>
+                </div>
+            </div>
+          </mat-card>
+        </div>
+    </div>
+</div>

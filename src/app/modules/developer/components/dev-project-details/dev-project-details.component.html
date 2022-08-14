@@ -1,0 +1,54 @@
+ <div class="container">
+    <div class="row" *ngFor="let name of project">
+        <mat-card class="mat-card-1">
+          <div>
+            <h2 class="head-1">Project Details</h2>
+          </div>
+        </mat-card>
+        <div class="row">
+            <div class="col-6">
+                <h3 class="sub-head-1">Project Title</h3>
+                <p class="para">{{name.projectTitle}}</p>
+            </div>
+            <div class="col-6">
+                <h3 class="sub-head-3">Project Name</h3>
+                <p class="para">{{name.projectName}}</p>
+            </div>
+          
+            <div class="w-100"></div>
+          
+            <div class="col-6">
+                <h3>Submitter</h3>
+                <p class="para">{{name.submitter}}</p>
+            </div>
+            <div class="col-6">
+                <h3>Project Type</h3>
+                <p class="para">{{name.projectType}}</p>
+            </div>
+            <div class="w-100"></div>
+            <div class="col-6">
+                <h3>Developer</h3>
+                <p class="para">{{name.Developer}}</p>
+            </div>
+          </div>
+          <mat-progress-bar mode="buffer"></mat-progress-bar>
+          <div class="col-6">
+              <mat-card class="mat-card-2" >
+                <p class="para-0">{{name.features}}</p>
+              </mat-card>
+        </div>
+        <div class="col-6">
+            <div class="row">
+                <div class="col-12">    
+                    <h3 class="sub-head-2">Created Date</h3>
+                    <p class="para">{{name.created}}</p>
+                </div>
+                <div class="col-12">
+                    <h3>Dead Line</h3>
+                    <p class="para">{{name.deadLine}}</p>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+ </div>
