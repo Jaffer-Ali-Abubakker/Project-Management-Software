@@ -50,5 +50,10 @@ router.put("/updateProject/:id", async (req, res) => {
       res.status(200).json(result);
     });
 });
+router.post("updateUser/:id",(req,res)=>{
+  console.log(req.params.userId);
+  console.log(req.body.position);
+})
+
 
 module.exports = router;
