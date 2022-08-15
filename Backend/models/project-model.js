@@ -9,6 +9,7 @@ const projectData = mongoose.Schema({
   features: { type: String, required: true },
   Developer: { type: String, required: true },
   submitter: { type: String, required: true },
+  Status: { type: String}
 });
 
 module.exports = mongoose.model("Created-projects", projectData);

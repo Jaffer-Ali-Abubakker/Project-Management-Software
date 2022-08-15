@@ -50,10 +50,18 @@ router.put("/updateProject/:id", async (req, res) => {
       res.status(200).json(result);
     });
 });
-router.post("updateUser/:id",(req,res)=>{
-  console.log("22222222222222222222222");
-  console.log(req.params.userId);
-  console.log(req.body.position);
+router.get("/getDevelopers", (req,res)=>{
+  const AllDevelopers = userData.find({position:"Developer"})
+  .then((result)=>{
+    res.status(200).json(result);
+  })
+
+})
+router.get("/getSubmitters", (req,res)=>{
+  const AllSubmitters = userData.find({position:"Submitter"})
+  .then((result)=>{
+    res.status(200).json(result);
+  })
 })
 
 

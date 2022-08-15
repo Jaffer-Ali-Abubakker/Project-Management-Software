@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validator,FormBuilder, Validators } from "@angular/forms";
+import { ActivatedRoute, Router } from '@angular/router';
 import { DeveloperService } from "../developer.service";
 
 @Component({
@@ -10,7 +11,12 @@ import { DeveloperService } from "../developer.service";
 export class ProjectWorksComponent implements OnInit {
  public UpdateProjectStatus! : FormGroup
 
-  constructor(private FormBuilder: FormBuilder, private DeveloperService: DeveloperService) { }
+  constructor(
+    private FormBuilder: FormBuilder,
+    private DeveloperService: DeveloperService,
+    private router: Router,
+    private route: ActivatedRoute
+    ) { }
 
   ngOnInit(): void {
 
@@ -29,6 +35,11 @@ export class ProjectWorksComponent implements OnInit {
       this.UpdateProjectStatus.value.projectTitle,
       this.UpdateProjectStatus.value.projectName,
       this.UpdateProjectStatus.value.ProjectStatus)
+      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+      this.router.onSameUrlNavigation = 'reload'; 
+      this.router.navigate(['./'], {
+        relativeTo: this.route
+      })
   }
 
   

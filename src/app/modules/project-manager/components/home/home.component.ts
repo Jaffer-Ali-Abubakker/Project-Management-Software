@@ -17,7 +17,7 @@ import { ProjectDetailsComponent } from "../project-details/project-details.comp
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  displayedColumns: string[] = ['projectTitle', 'projectName', 'projectType', 'created', 'Details','Edit'];
+  displayedColumns: string[] = ['projectTitle', 'projectName', 'projectType', 'created','status', 'Details','Edit'];
   dataSource : any
   project: getprojectData[] = [];
 

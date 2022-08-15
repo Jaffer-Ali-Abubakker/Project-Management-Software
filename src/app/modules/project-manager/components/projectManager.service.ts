@@ -18,6 +18,8 @@ export class projectDataService {
   private user_url: string = 'http://localhost:3000/api/project-Manager/alluser';
   private update_project: string = 'http://localhost:3000/api/project-Manager/updateProject';
   private update_user_position: string = 'http://localhost:3000/api/user/updateUser';
+  private get_developers: string =  'http://localhost:3000/api/project-Manager/getDevelopers'
+  private get_Submitter: string = 'http://localhost:3000/api/project-Manager/getSubmitters'
 
 
 
@@ -67,6 +69,16 @@ export class projectDataService {
      .subscribe(res =>{
       console.log(res);
      })
+  }
+  getDevelopers() {
+    return this.http.get<any[]>(this.get_developers)
+    .pipe(map(response => response))
+
+  }
+  getSubmitter() {
+    return this.http.get<any[]>(this.get_Submitter)
+    .pipe(map(response => response))
+
   }
 }
 

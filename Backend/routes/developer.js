@@ -1,11 +1,18 @@
 const express = require("express");
 const router = express.Router();
+const ProjectData = require('../models/project-model')
 
 
-router.post("/updateProjectStatus", (req, res, next)=>{
-    console.log("2222222222222222222222222222222222222");
-    console.log(req.body);
-    
+router.post("/updateProjectStatus", async(req, res, next)=>{
+  let name = req.body.projectTitle
+  ProjectData.updateOne({projectTitle:name},{
+    $set:{
+        Status: req.body.ProjectStatus
+    }
+  }).then((result)=>{
+    console.log(result);
+    res.status(200).json(result)
+  })
 })
 
 

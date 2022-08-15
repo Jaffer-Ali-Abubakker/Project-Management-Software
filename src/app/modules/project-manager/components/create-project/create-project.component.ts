@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl,FormGroup,Validators } from "@angular/forms";
 import { projectDataService } from "../projectManager.service";
+import {  } from "../project-data.model";
 
 
 @Component({
@@ -9,6 +10,9 @@ import { projectDataService } from "../projectManager.service";
   styleUrls: ['./create-project.component.scss']
 })
 export class CreateProjectComponent implements OnInit {
+   User: any[] = []
+   Submitter: any[] = []
+  
   projectCreated = new FormGroup({
     projectTitle: new FormControl('',Validators.required),
     projectName: new FormControl('', Validators.required),
@@ -23,6 +27,16 @@ export class CreateProjectComponent implements OnInit {
   constructor(public ProjectService: projectDataService) { }
 
   ngOnInit(): void {
+    this.ProjectService.getDevelopers()
+    .subscribe(result =>{
+       this.User = result
+       console.log(this.User); 
+    })
+    this.ProjectService.getSubmitter()
+    .subscribe(responce =>{
+      this.Submitter = responce
+      console.log(this.Submitter);
+    })
   }
 
   get projectTitle(){

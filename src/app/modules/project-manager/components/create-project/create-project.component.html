@@ -87,22 +87,20 @@
     </div>
     <div class="d-flex align-items-end bg-light mb-3" style="height: 100px;">
       <div class="col">
-          <mat-form-field appearance="outline">
-              <mat-label>Select</mat-label>
-              <mat-select formControlName="Developer">
-                <mat-option value="Developer name">Developer name</mat-option>
-                <mat-option value="Developer name">Developer name</mat-option>
+          <mat-form-field appearance="outline" >
+              <mat-label>Select Developer</mat-label>
+              <mat-select formControlName="Developer" >
+                <mat-option value="{{name.FullName}}" *ngFor="let name of User">{{name.FullName}}</mat-option>
               </mat-select>
               <mat-error *ngIf="Developer?.errors?.['required']"
               >assing developers to the project</mat-error>
             </mat-form-field> 
       </div>
       <div class="col">   
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="outline" >
           <mat-label>Select</mat-label>
-          <mat-select formControlName="submitter">
-            <mat-option value="Submitter name">Submitter name</mat-option>
-            <mat-option value="Submitter name">Submitter name</mat-option>
+          <mat-select formControlName="submitter" >
+            <mat-option value="{{sub.FullName}}" *ngFor="let sub of Submitter">{{sub.FullName}}</mat-option>
           </mat-select>
           <mat-error *ngIf="submitter?.errors?.['required']"
           >assing submitter to the project</mat-error>
