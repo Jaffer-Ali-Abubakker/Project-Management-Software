@@ -12,6 +12,7 @@ import { MatCardModule } from '@angular/material/card';
 import { DevHomeComponent } from './components/dev-home/dev-home.component';
 import { DevProjectDetailsComponent } from './components/dev-project-details/dev-project-details.component';
 import { ProjectWorksComponent } from './components/project-works/project-works.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { ProjectWorksComponent } from './components/project-works/project-works.
     HttpClientModule,
     MatSidenavModule,
     AngularMaterialModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule,
+    ReactiveFormsModule
 
   ]
 })

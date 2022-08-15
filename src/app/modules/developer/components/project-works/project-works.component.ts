@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validator,FormBuilder, Validators } from "@angular/forms";
+import { DeveloperService } from "../developer.service";
 
 @Component({
   selector: 'app-project-works',
@@ -6,10 +8,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./project-works.component.scss']
 })
 export class ProjectWorksComponent implements OnInit {
+ public UpdateProjectStatus! : FormGroup
 
-  constructor() { }
+  constructor(private FormBuilder: FormBuilder, private DeveloperService: DeveloperService) { }
 
   ngOnInit(): void {
+
+    this.UpdateProjectStatus = this.FormBuilder.group({
+      projectTitle:['',[Validators.required]],
+      projectName:['',[Validators.required]],
+      ProjectStatus:['',[Validators.required]]
+    })
+  }
+  DeveloperSubmit(){
+    console.log(this.UpdateProjectStatus.value);
+     if(this.UpdateProjectStatus.invalid){
+      return
+     }
+     this.DeveloperService.Updateproject(
+      this.UpdateProjectStatus.value.projectTitle,
+      this.UpdateProjectStatus.value.projectName,
+      this.UpdateProjectStatus.value.ProjectStatus)
   }
 
+  
 }

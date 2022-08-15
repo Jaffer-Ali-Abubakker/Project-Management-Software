@@ -20,6 +20,6 @@ export interface getprojectData{
     submitter: string;
 }
 export interface userData{
-    position: any;
-    userId: any
+    position: string;
+
 }

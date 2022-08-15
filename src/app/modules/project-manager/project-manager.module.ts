@@ -18,6 +18,7 @@ import { AllUsersComponent } from './components/all-users/all-users.component';
 import { EditProjectComponent } from './components/edit-project/edit-project.component';
 import { ProjectDetailsComponent } from './components/project-details/project-details.component';
 import { UserPositionComponent } from './components/user-position/user-position.component';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
 
 
 
@@ -31,7 +32,8 @@ import { UserPositionComponent } from './components/user-position/user-position.
     AllUsersComponent,
     EditProjectComponent,
     ProjectDetailsComponent,
-    UserPositionComponent
+    UserPositionComponent,
+    UserDetailsComponent
   ],
   imports: [
     CommonModule,

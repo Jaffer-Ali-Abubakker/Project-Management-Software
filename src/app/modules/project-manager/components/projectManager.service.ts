@@ -17,7 +17,7 @@ export class projectDataService {
   private _url:string = 'http://localhost:3000/api/project-Manager/home';
   private user_url: string = 'http://localhost:3000/api/project-Manager/alluser';
   private update_project: string = 'http://localhost:3000/api/project-Manager/updateProject';
-  private update_user_position: string = 'http://localhost:3000/api/project-Manager/updateUser';
+  private update_user_position: string = 'http://localhost:3000/api/user/updateUser';
 
 
 
@@ -62,7 +62,11 @@ export class projectDataService {
     return this.http.put<any>(`${this.update_project}/${id}`, data)
   }
   updateUserPosition(position: any, userId: any){
-     return this.http.post(`${this.update_user_position}/${userId}`,position)
+    const UserData: userData = { position: position}
+     return this.http.put(`${this.update_user_position}/${userId}`,UserData)
+     .subscribe(res =>{
+      console.log(res);
+     })
   }
 }
 

@@ -8,3 +8,8 @@ export interface getprojectData{
     Developer: string;
     submitter: string;
 }
+export interface updateprojectface{
+    projectTitle: string
+    projectName: string;
+    ProjectStatus: string;
+}

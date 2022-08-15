@@ -51,6 +51,7 @@ router.put("/updateProject/:id", async (req, res) => {
     });
 });
 router.post("updateUser/:id",(req,res)=>{
+  console.log("22222222222222222222222");
   console.log(req.params.userId);
   console.log(req.body.position);
 })

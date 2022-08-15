@@ -13,7 +13,8 @@ import { AuthData,AuthDataLogin } from './auth-data.model';
 })
 export class AuthService {
   private isAuthenticated = false;
-  private token: unknown;
+  private token : unknown;
+  private tokenTimer : any;
   private authStatusListener = new Subject<boolean>();
 
   constructor(private http: HttpClient, private router:Router,private toast: HotToastService) { }
@@ -55,15 +56,33 @@ export class AuthService {
       this.token = token;
       if(token){
         const expiresInsDuration = response.expiresIn;
-        setTimeout(() => {}, expiresInsDuration * 1000);
+        this.tokenTimer = setTimeout(() => {
+          this.logout();
+        }, expiresInsDuration * 1000 );
+        this.isAuthenticated = true;
         this.authStatusListener.next(true);
-        this.router.navigate(['/'])
+        const now = new Date();
+        const expirationDate = new Date (now.getTime() + expiresInsDuration *1000);
+        console.log(expirationDate);     
+        this.saveAuthData(token, expirationDate)
+        this.router.navigate(['/']) 
       }
     })
   }
   logout(){
     this.token = null;
     this.isAuthenticated = false;
-    
+    this.authStatusListener.next(false);
+    clearTimeout(this.tokenTimer)
+    this.clearAuthData();
+    this.router.navigate(['/'])
+  }
+  private saveAuthData(token: string, expirationDate: Date){
+    localStorage.setItem('token', token);
+    localStorage.setItem('expiration', expirationDate.toISOString())
+  }
+  private clearAuthData(){
+    localStorage.removeItem('token')
+    localStorage.removeItem('expiration')
   }
 }

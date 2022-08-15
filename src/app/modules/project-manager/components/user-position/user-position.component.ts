@@ -1,6 +1,7 @@
 import { Component, OnInit, Input  } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { projectDataService } from "../projectManager.service";
+import { UserDetailsComponent } from "../user-details/user-details.component";
 
 @Component({
   selector: 'app-user-position',
@@ -27,6 +28,8 @@ export class UserPositionComponent implements OnInit {
       return
     }
     this.ProjectService.updateUserPosition(this.Userassignform.value.position, this.Userassignform.value.userId)
+
+    
   }
  
 }

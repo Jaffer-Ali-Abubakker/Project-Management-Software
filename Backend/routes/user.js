@@ -3,6 +3,8 @@ const User = require("../models/user");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const userData = require("../models/user");
+
 
 
 router.post('/register', (req, res, next) => {
@@ -73,6 +75,22 @@ router.post("/login", (req, res, next) => {
      console.log(err);
     });
 });
+router.put("/updateUser/:id", async(req,res)=>{
+  let userId = req.params.id
+  let data = req.body
+  console.log(userId);
+  await userData.updateOne({_id: userId},
+    {
+      $set:{
+        position : data.position,
+      }
+    }
+    ).then((result)=>{
+      console.log(result);
+      res.status(200).json(result)
+    })
+})
+
 
 
 

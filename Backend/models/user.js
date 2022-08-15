@@ -5,9 +5,10 @@ const userSchema = mongoose.Schema({
     FullName : {type : String, required: true},
     email    : { type: String, required: true, unique: true},
     mobile   : { type: Number, required: true, unique: true},
-    password : { type: String, required: true}
+    password : { type: String, required: true},
+    position : { type: String }
 });
 
-userSchema.plugin(uniqueValidator);
+userSchema.plugin(uniqueValidator); 
 
 module.exports = mongoose.model("User", userSchema);
