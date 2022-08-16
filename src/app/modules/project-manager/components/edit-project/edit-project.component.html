@@ -52,19 +52,17 @@
     <div class="d-flex align-items-end bg-light mb-3" style="height: 100px;">
       <div class="col">
         <mat-form-field appearance="outline">
-            <mat-label>Select</mat-label>
+            <mat-label>Select Developer</mat-label>
             <mat-select formControlName="Developer">
-              <mat-option value="Developer name">Developer name</mat-option>
-              <mat-option value="Developer name">Developer name</mat-option>
+              <mat-option value="{{name.FullName}}" *ngFor="let name of Developer">{{name.FullName}}</mat-option>
             </mat-select>
           </mat-form-field> 
       </div>
       <div class="col">
         <mat-form-field appearance="outline">
-            <mat-label>Select</mat-label>
+            <mat-label>Select Submitter</mat-label>
             <mat-select formControlName="submitter">
-              <mat-option value="Submitter name">Submitter name</mat-option>
-              <mat-option value="Submitter name">Submitter name</mat-option>
+              <mat-option value="{{sub.FullName}}" *ngFor="let sub of Submitter">{{sub.FullName}}</mat-option>
             </mat-select>
           </mat-form-field>
       </div>

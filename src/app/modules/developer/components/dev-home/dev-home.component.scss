@@ -1,37 +1,26 @@
 .mat-card-1{
   height: 300px;
-  margin-top: 20px;
-  max-width: 800px;
-  background-color: rgb(176, 205, 215);
+  margin-top: 30px;
+  margin-left: 30px;
+  width: 70%;
+
 }
 .mat-card-2{
-   margin-top: 20px;
-   max-width: 80%;
-   height: 300px;
-  
+  margin-top: 30px;
+  width: 90%;
+  height: 300px;
 }
-
 .mat-card-1-5{
-  max-width: 60%;
-  height: 50px;
-  background-color: #3f51b5;
+ width: 60%;
+ margin-top: -30px;
+ margin-left: -20px;
+ height: 50px;
+ background-color: #3f51b5;
 }
 .head-1{
-    margin-top: -15px;
-    color: white;
-    font-size: medium;
-}
-.para-1{
-  margin-top: -20px;
-  font-size: 10px;
-  margin-left: 10px;
+  margin-top: -7px;
   color: white;
 }
-table {
-    width: 100%;
-    zoom: 75%;
-}
-.para-2{
-    font-weight: bold;
-    font-size: 15px;
+table{
+  width: 100%;
 }

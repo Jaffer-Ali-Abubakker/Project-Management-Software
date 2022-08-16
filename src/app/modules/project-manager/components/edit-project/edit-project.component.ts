@@ -11,6 +11,9 @@ import { HotToastService } from '@ngneat/hot-toast';
   styleUrls: ['./edit-project.component.scss'],
 })
 export class EditProjectComponent implements OnInit {
+  Developer: any[] = []
+  Submitter: any[] = []
+
   public projectForm!: FormGroup;
   constructor(
     private FormBuilder: FormBuilder,
@@ -21,6 +24,15 @@ export class EditProjectComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.ProjectService.getDevelopers()
+    .subscribe(result =>{
+      this.Developer = result
+    })
+    this.ProjectService.getSubmitter()
+    .subscribe(result =>{
+      this.Submitter = result
+    })
+
     this.projectForm = this.FormBuilder.group({
       projectTitle: ['', Validators.required],
       projectName: ['', Validators.required],

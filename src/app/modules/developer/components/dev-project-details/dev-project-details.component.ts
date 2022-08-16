@@ -14,8 +14,6 @@ export class DevProjectDetailsComponent implements OnInit {
   ngOnInit(): void {
     let result = this.ProjectData
     this.project.push(result)
-    console.log(this.project);
-    
+    console.log(this.project);  
   }
-
 }

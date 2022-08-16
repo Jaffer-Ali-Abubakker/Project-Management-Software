@@ -1,0 +1,57 @@
+<mat-card class="mat-card-1">
+  <h2 class="head-1">Project Details</h2>
+</mat-card>
+<div class="container" *ngFor="let pro of project">
+  <div class="row">
+    <div class="col-6">
+      <h3 class="head-2">project Title</h3>
+      <p class="para-1">{{pro.projecTitle}}</p>
+    </div>
+    <div class="col-6">
+      <h3 class="head-2">project Name</h3>
+      <p class="para-1">{{pro.projectName}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <h3 class="head-2">Project Type</h3>
+      <p class="para-1">{{pro.projectType}}</p>
+    </div>
+    <div class="col-6">
+      <h3 class="head-2">Developer</h3>
+      <p class="para-1">{{pro.Developer}}</p>
+    </div>
+  </div>
+  <mat-progress-bar mode="buffer" class="line-1"></mat-progress-bar>
+  <div class="row">
+    <div class="col-6">
+      <mat-card class="mat-card-2"> 
+        <h3 class="head-4">Comments</h3>
+        <p>{{pro.comments}}</p>
+      </mat-card>
+    </div>
+    <div class="col-6">
+      <div class="row">
+        <div class="col-12">
+          <h3 class="head-2">Created date</h3>
+          <p class="para-1">{{pro.created}}</p>
+        </div>
+        <div class="col-12">
+          <h3 class="head-3">Dead Line</h3>
+          <p class="para-2">{{pro.deadLine}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <mat-progress-bar mode="buffer" class="line-1"></mat-progress-bar>
+  <div class="row">
+    <div class="col-12">
+      <div class="row">
+        <h3 class="head-2">GitHub repository</h3>
+        <mat-card>
+        <a class="link-1" href="{{pro.GitRep}}">{{pro.GitRep}}</a>
+        </mat-card>
+    </div>
+    </div>
+  </div>
+</div>

@@ -14,6 +14,18 @@ router.post("/updateProjectStatus", async(req, res, next)=>{
     res.status(200).json(result)
   })
 })
+router.put('/UploadProject', async(req,res, next)=>{
+    let project  = req.body.projectTitle
+    ProjectData.updateOne({projectTitle:project},{
+        $set:{
+            comments: req.body.comments,
+            GitRep: req.body.GitRepo
+        }
+    }).then((result)=>{
+        console.log(result);
+        res.status(200).json(result)
+    })
+})
 
 
 module.exports = router;

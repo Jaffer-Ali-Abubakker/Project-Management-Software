@@ -13,3 +13,9 @@ export interface updateprojectface{
     projectName: string;
     ProjectStatus: string;
 }
+export interface UploadProjectInter{
+    projectTitle: string
+    projectName: string;
+    comments: string;
+    GitRepo: string
+}

@@ -13,7 +13,8 @@ const routes: Routes = [
   {path: "register", component: RegisterComponent},
   {path: "",redirectTo: "/", pathMatch:'full' },
   {path: "developer", loadChildren: () => import('./modules/developer/developer.module').then((m)=> m.DeveloperModule),},
-  {path:"project-manager", loadChildren: () => import('./modules/project-manager/project-manager.module').then((m)=> m.ProjectManagerModule),},
+  {path: "project-manager", loadChildren: () => import('./modules/project-manager/project-manager.module').then((m)=> m.ProjectManagerModule),},
+  {path: "submitter", loadChildren: () => import('./modules/submitter/submitter.module').then((m)=> m.SubmitterModule),},
  
   
 

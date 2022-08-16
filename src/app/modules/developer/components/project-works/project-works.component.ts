@@ -42,5 +42,4 @@ export class ProjectWorksComponent implements OnInit {
       })
   }
 
-  
 }

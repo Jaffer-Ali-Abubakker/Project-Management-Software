@@ -13,6 +13,7 @@ import { DevHomeComponent } from './components/dev-home/dev-home.component';
 import { DevProjectDetailsComponent } from './components/dev-project-details/dev-project-details.component';
 import { ProjectWorksComponent } from './components/project-works/project-works.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UploadProjectComponent } from './components/upload-project/upload-project.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DevNavBarComponent,
     DevHomeComponent,
     DevProjectDetailsComponent,
-    ProjectWorksComponent
+    ProjectWorksComponent,
+    UploadProjectComponent
   ],
   imports: [
     CommonModule,
