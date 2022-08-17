@@ -14,6 +14,9 @@ import { SubmitterDashboardComponent } from './components/submitter-dashboard/su
 import { HttpClientModule } from '@angular/common/http';
 import { AngularMaterialModule } from 'src/app/angular-material.module';
 import { SubProjectDetailsComponent } from './components/sub-project-details/sub-project-details.component';
+import { ReportBugComponent } from './components/report-bug/report-bug.component';
+import { ListBugComponent } from './components/list-bug/list-bug.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +24,9 @@ import { SubProjectDetailsComponent } from './components/sub-project-details/sub
     SubHomeComponent,
     SubNavComponent,
     SubmitterDashboardComponent,
-    SubProjectDetailsComponent
+    SubProjectDetailsComponent,
+    ReportBugComponent,
+    ListBugComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +39,8 @@ import { SubProjectDetailsComponent } from './components/sub-project-details/sub
     MatListModule,
     MatSidenavModule,
     HttpClientModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class SubmitterModule { }

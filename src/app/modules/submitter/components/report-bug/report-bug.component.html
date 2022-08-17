@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row">
+    <form >
+    <mat-card class="mat-card-1">
+      <form [formGroup]="BugSubmitForm" (ngSubmit)="BugSubmit()">
+      <div class="row">
+        <mat-card class="mat-card-2">
+          <div>
+            <h2 class="head-1">Report Bugs</h2>
+          </div>
+        </mat-card>
+        <div class="row row-field-1">
+          <div class="col-6">
+            <mat-form-field appearance="outline">
+              <mat-label>Project Title</mat-label>
+              <input matInput placeholder="eg:-Project #1" formControlName="projectTitle"/>
+              <mat-icon matSuffix>bookmark</mat-icon>
+              <mat-hint>Hint</mat-hint>
+            </mat-form-field>
+          </div>
+          <div class="col-6">
+            <mat-form-field appearance="outline">
+              <mat-label>Project Name</mat-label>
+              <input matInput placeholder="eg:- Nike" formControlName="projectName" />
+              <mat-icon matSuffix>remove_from_queue</mat-icon>
+              <mat-hint>Hint</mat-hint>
+            </mat-form-field>
+          </div>
+          <div class="row row-field-2">
+            <div class="col-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Project Type</mat-label>
+                <input matInput placeholder="eg:-E-commerce" formControlName="projectType"/>
+                <mat-icon matSuffix>keyboard</mat-icon>
+                <mat-hint>Hint</mat-hint>
+              </mat-form-field>
+            </div>
+            <div class="col-6">
+              <mat-form-field class="mat-form-2" appearance="outline">
+                <mat-label>No of Bugs</mat-label>
+                <input type="number" matInput placeholder="eg:2" formControlName="noOfBugs">
+                <mat-icon matSuffix>add_alert</mat-icon>
+                <mat-hint>Hint</mat-hint>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <app-list-bug></app-list-bug>
+      </div>
+      <button mat-raised-button color="primary" class="btn-2">
+        Submit<mat-icon class="icon-1" matSuffix>save</mat-icon>
+      </button>
+    </form>
+    </mat-card>
+    </form>
+  </div>
+</div>

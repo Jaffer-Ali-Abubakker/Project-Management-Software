@@ -1,0 +1,30 @@
+<div class="row row-field-3">
+    <div class="col-12">
+      <mat-card class="mat-card-3">
+        <div class="vl"></div>
+        <form [formGroup]="BugListForm" (ngSubmit)="BulistSubmit()">
+        <div class="row">
+          <div class="col-6">
+            <h3 class="head-2">Bug Title</h3>
+            <mat-form-field appearance="outline" class="mat-form-3">
+              <mat-label>LIST ONE BY ONE</mat-label>
+              <input matInput placeholder="Placeholder" formControlName="BugTitle" />
+            </mat-form-field>
+          </div>
+          <div class="col-6">
+            <h3 class="head-3">Details about the bug</h3>
+            <mat-card class="mat-card-4">
+              <mat-form-field appearance="outline" class="mat-form-4">
+                <mat-label>Textarea</mat-label>
+                <textarea matInput formControlName="BugDetail"></textarea>
+              </mat-form-field>
+            </mat-card>
+            <button mat-raised-button color="primary" class="btn-1">
+              Next
+            </button>
+          </div>
+        </div>
+        </form>
+      </mat-card>
+    </div>
+  </div>
